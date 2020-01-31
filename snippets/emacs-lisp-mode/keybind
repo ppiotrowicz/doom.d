@@ -4,5 +4,5 @@
 # key: keybind
 # condition: t                         
 # --
-:desc "${1:description}" :${2:n} ${3:key} #'${4:defun}
+:desc "${1:description}" :${2:n} "${3:key}" #'${4:defun}
 $0

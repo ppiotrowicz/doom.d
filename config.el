@@ -15,11 +15,20 @@
 
 (setq org-directory "~/org/")
 
+(global-hl-line-mode -1)
 (setq display-line-numbers-type t)
 
 ;; deft
 (setq deft-directory "~/Dropbox/Notes")
 (setq deft-recursive t)
 
+;; dashboard logo
+(setq fancy-splash-image "~/.doom.d/logo.png")
+
+;; Ruby - additional packages
+(use-package! slim-mode
+  :defer t)
+
 (load! "+defuns")
 (load! "+bindings")
+(load! "+org")
