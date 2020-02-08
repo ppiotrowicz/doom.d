@@ -8,6 +8,8 @@
 (setq user-full-name "Pawel Piotrowicz"
       user-mail-address "ppiotrowicz@gmail.com")
 
+(setq auth-sources '("~/.authinfo.gpg"))
+
 (setq doom-font (font-spec :family "iosevka" :size 14)
       doom-variable-pitch-font (font-spec :family "iosevka"))
 
@@ -32,3 +34,4 @@
 (load! "+defuns")
 (load! "+bindings")
 (load! "+org")
+(load! "+email")
