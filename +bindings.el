@@ -73,6 +73,11 @@
       "f" #'rspec-toggle-spec-and-target
       "F" #'rspec-toggle-spec-and-target-find-example)
 
+(map! :after evil-org-agenda
+      :map evil-org-agenda-mode-map
+      :nm "J" #'pp/org-agenda-next-header
+      :nm "K" #'pp/org-agenda-previous-header)
+
 (defun pp/rspec-stop-spec ()
   "Kills rspec or compilation buffers"
   (interactive)
