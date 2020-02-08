@@ -17,8 +17,15 @@
 
 (setq org-directory "~/org/")
 
-(global-hl-line-mode -1)
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type nil)
+(add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+
+;; evil
+(setq evil-split-window-below t
+      evil-vsplit-window-right t)
+
+;; magit
+(setq magit-inhibit-save-previous-winconf t)
 
 ;; deft
 (setq deft-directory "~/Dropbox/Notes")
@@ -27,11 +34,10 @@
 ;; dashboard logo
 (setq fancy-splash-image "~/.doom.d/logo.png")
 
-;; Ruby - additional packages
-(use-package! slim-mode
-  :defer t)
+(setq js-indent-level 2)
 
 (load! "+defuns")
 (load! "+bindings")
 (load! "+org")
+(load! "+ruby")
 (load! "+email")

@@ -78,7 +78,4 @@
       :nm "J" #'pp/org-agenda-next-header
       :nm "K" #'pp/org-agenda-previous-header)
 
-(defun pp/rspec-stop-spec ()
-  "Kills rspec or compilation buffers"
-  (interactive)
-  (kill-buffer "*rspec-compilation*"))
+(map! :map ctl-x-map "n" #'narrow-or-widen-dwim)
