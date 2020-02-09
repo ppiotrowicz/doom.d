@@ -40,4 +40,3 @@
 (load! "+bindings")
 (load! "+org")
 (load! "+ruby")
-(load! "+email")
