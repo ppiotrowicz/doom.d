@@ -24,7 +24,6 @@
 
    (:desc "agenda" :prefix "a"
      :desc "overview" :n "a" #'pp/agenda-overview
-     :desc "reading"  :n "r" #'pp/agenda-reading
      :desc "work"     :n "w" #'pp/agenda-work)
 
    (:desc "buffers" :prefix "b"
