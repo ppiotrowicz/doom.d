@@ -77,4 +77,8 @@
       :nm "J" #'pp/org-agenda-next-header
       :nm "K" #'pp/org-agenda-previous-header)
 
+(map! :after vterm
+      :map vterm-mode-map
+      :ni "C-<return>" #'evil-collection-vterm-toggle-send-escape)
+
 (map! :map ctl-x-map "n" #'narrow-or-widen-dwim)
