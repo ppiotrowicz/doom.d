@@ -190,3 +190,10 @@ if LOCATION is not given, the value of `org-archive-location' is used."
   :init
   :config
   (org-super-agenda-mode))
+
+;; customize org-colors
+(after! org
+  (let ((bg (face-attribute 'default :background)))
+    (custom-set-faces!
+      `(org-column-title :background ,bg)
+      `(org-column :background ,bg))))
