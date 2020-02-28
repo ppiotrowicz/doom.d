@@ -13,6 +13,8 @@
 (setq doom-font (font-spec :family "iosevka" :size 14)
       doom-variable-pitch-font (font-spec :family "iosevka"))
 
+(setq doom-scratch-buffer-major-mode 'emacs-lisp-mode)
+
 (setq doom-theme 'doom-one)
 
 (setq org-directory "~/org/")
