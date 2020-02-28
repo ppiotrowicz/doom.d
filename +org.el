@@ -64,8 +64,9 @@
   (let ((org-super-agenda-groups `((:discard (:not (:tag "work")))
                                    (:name "Today"
                                           :time-grid t
+                                          :scheduled today)
                                    (:name "This week"
-                                          :deadline (before ,(org-read-date nil nil "+sun")))))))
+                                          :deadline (before ,(org-read-date nil nil "+sun"))))))
     (org-agenda nil "a")
     (org-agenda-day-view)))
 
