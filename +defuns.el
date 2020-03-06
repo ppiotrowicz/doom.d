@@ -84,3 +84,11 @@ If prefix ARG is non-nil, recreate vterm buffer in the current project's root."
           (unless (eq major-mode 'vterm-mode)
             (vterm-mode)))
         (pop-to-buffer buffer)))))
+
+(defun pp/neotree/find-this-file ()
+  "Wraps +neotree/find-this-file and toggles neotree"
+  (interactive)
+  (require 'neotree)
+  (if (neo-global--window-exists-p)
+      (neotree-hide)
+    (+neotree/find-this-file)))

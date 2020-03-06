@@ -16,7 +16,7 @@
 
  (:leader
    :desc "vterm here"          :n "!" #'pp/vterm-toggle
-   :desc "neotree find"        :n "t" #'+neotree/find-this-file
+   :desc "neotree find"        :n "t" #'pp/neotree/find-this-file
    :desc "neotree open"        :n "T" #'+neotree/open
    :desc "search"              :n "/" #'+default/search-project
    :desc "org capture"         :n "x" #'org-capture
