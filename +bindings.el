@@ -72,6 +72,18 @@
       "f" #'rspec-toggle-spec-and-target
       "F" #'rspec-toggle-spec-and-target-find-example)
 
+(map! :localleader
+      :after elixir-mode
+      :map elixir-mode-map
+      "=" #'elixir-format
+      :prefix "t"
+      "a" #'exunit-verify-all
+      "r" #'exunit-rerun
+      "b" #'exunit-verify
+      "t" #'exunit-verify-single
+      "f" #'exunit-toggle-file-and-test
+      "F" #'exunit-toggle-file-and-test-other-window)
+
 (map! :after evil-org-agenda
       :map evil-org-agenda-mode-map
       :nm "J" #'pp/org-agenda-next-header

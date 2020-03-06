@@ -45,3 +45,5 @@
 (package! speed-type)
 (package! slim-mode)
 (package! org-super-agenda)
+(package! alchemist :disable t)
+(package! exunit)

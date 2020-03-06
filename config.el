@@ -42,3 +42,4 @@
 (load! "+bindings")
 (load! "+org")
 (load! "+ruby")
+(load! "+elixir")
