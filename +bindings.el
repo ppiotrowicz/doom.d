@@ -15,16 +15,19 @@
    :n "C-s"    #'swiper)
 
  (:leader
-   :desc "vterm here"          :n "!" #'pp/vterm-toggle
+   :desc "vterm here"          :n "!" #'+pp/vterm/here
    :desc "neotree find"        :n "t" #'pp/neotree/find-this-file
    :desc "neotree open"        :n "T" #'+neotree/open
    :desc "search"              :n "/" #'+default/search-project
    :desc "org capture"         :n "x" #'org-capture
    :desc "open scratch buffer" :n "X" #'doom/open-scratch-buffer
+   :desc "format"              :n "=" #'format-all-buffer
+
 
    (:desc "agenda" :prefix "a"
      :desc "overview" :n "a" #'pp/agenda-overview
-     :desc "work"     :n "w" #'pp/agenda-work)
+     :desc "work"     :n "w" #'pp/agenda-work
+     :desc "today"    :n "t" #'pp/todo-today)
 
    (:desc "buffers" :prefix "b"
      :desc "switch"         :n "b" #'+ivy/switch-buffer
@@ -75,7 +78,6 @@
 (map! :localleader
       :after elixir-mode
       :map elixir-mode-map
-      "=" #'elixir-format
       :prefix "t"
       "a" #'exunit-verify-all
       "r" #'exunit-rerun
@@ -84,10 +86,20 @@
       "f" #'exunit-toggle-file-and-test
       "F" #'exunit-toggle-file-and-test-other-window)
 
+(map! :localleader
+      :after python-mode
+      :map python-mode-map
+      :prefix "t"
+      "a" #'python-pytest)
+
 (map! :after evil-org-agenda
       :map evil-org-agenda-mode-map
       :nm "J" #'pp/org-agenda-next-header
-      :nm "K" #'pp/org-agenda-previous-header)
+      :nm "K" #'pp/org-agenda-previous-header
+      :nm "C-h"    #'evil-window-left
+      :nm "C-j"    #'evil-window-down
+      :nm "C-k"    #'evil-window-up
+      :nm "C-l"    #'evil-window-right)
 
 (map! :after vterm
       :map vterm-mode-map

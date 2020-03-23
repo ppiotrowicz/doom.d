@@ -29,6 +29,8 @@
 (setq org-ellipsis " ▾ ")
 (setq org-bullets-bullet-list '("☰"))
 (setq org-log-into-drawer t)
+(setq org-agenda-skip-deadline-prewarning-if-scheduled t)
+(setq org-tags-column 80)
 
 (after! org
   (setq org-agenda-prefix-format
@@ -44,15 +46,15 @@
   (interactive)
   (let ((org-super-agenda-groups `((:discard (:tag "work"))
                                    (:name "Today"
-                                          :time-grid t
                                           :scheduled today)
                                    (:name "Due today"
+                                          :scheduled past
                                           :deadline today)
                                    (:name "Important"
                                           :priority "A")
                                    (:name "Overdue"
                                           :deadline past)
-                                   (:name "Due in a week"
+                                   (:name "This week"
                                           :deadline (before ,(org-read-date nil nil "+7")))
                                    (:discard (:anything t)))))
     (org-agenda nil "a")
@@ -63,10 +65,23 @@
   (interactive)
   (let ((org-super-agenda-groups `((:discard (:not (:tag "work")))
                                    (:name "Today"
-                                          :time-grid t
+                                          :scheduled past
                                           :scheduled today)
                                    (:name "This week"
-                                          :deadline (before ,(org-read-date nil nil "+sun"))))))
+                                          :deadline (before ,(org-read-date nil nil "+sun")))
+                                   (:discard (:anything t)))))
+    (org-agenda nil "a")
+    (org-agenda-day-view)))
+
+(defun pp/todo-today ()
+  "Shows all tasks scheduled for today"
+  (interactive)
+  (let ((org-super-agenda-groups `((:discard (:todo "[X]"))
+                                   (:name "Today"
+                                          :date today)
+                                   (:name "Overdue"
+                                          :deadline past)
+                                   (:discard (:anything t)))))
     (org-agenda nil "a")
     (org-agenda-day-view)))
 
@@ -185,7 +200,7 @@ if LOCATION is not given, the value of `org-archive-location' is used."
     org-habit-completed-glyph ?✓
     org-habit-show-habits-only-for-today nil))
 
-(def-package! org-super-agenda
+(use-package! org-super-agenda
   :after org
   :init
   :config
