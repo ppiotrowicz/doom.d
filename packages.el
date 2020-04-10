@@ -46,4 +46,5 @@
 (package! slim-mode)
 (package! org-super-agenda)
 (package! alchemist :disable t)
+(package! nose :disable t)
 (package! exunit)
