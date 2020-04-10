@@ -43,3 +43,4 @@
 (load! "+org")
 (load! "+ruby")
 (load! "+elixir")
+(load! "+ledger")
