@@ -63,7 +63,12 @@
 (defun pp/agenda-work ()
   "Shows agenda view with work tasks for this week"
   (interactive)
-  (let ((org-super-agenda-groups `((:discard (:not (:tag "work")))
+  (let ((org-agenda-skip-scheduled-if-done t)
+        (org-agenda-skip-deadline-if-done t)
+        (org-super-agenda-groups `((:discard (:not (:tag "work")))
+                                   (:name "Done today"
+                                          :order 1
+                                          :log t)
                                    (:name "Today"
                                           :scheduled past
                                           :scheduled today)
@@ -76,9 +81,12 @@
 (defun pp/todo-today ()
   "Shows all tasks scheduled for today"
   (interactive)
-  (let ((org-super-agenda-groups `((:discard (:todo "[X]"))
+  (let ((org-super-agenda-groups `((:name "Done"
+                                          :order 1
+                                          :and (:date today :todo "[X]"))
                                    (:name "Today"
-                                          :date today)
+                                          :scheduled past
+                                          :scheduled today)
                                    (:name "Overdue"
                                           :deadline past)
                                    (:discard (:anything t)))))
