@@ -30,6 +30,7 @@
 (setq org-bullets-bullet-list '("☰"))
 (setq org-log-into-drawer t)
 (setq org-agenda-skip-deadline-prewarning-if-scheduled t)
+(setq org-agenda-skip-scheduled-if-deadline-is-shown t)
 (setq org-tags-column 80)
 
 (after! org
@@ -45,9 +46,9 @@
   "Shows agenda view with all kinds of tasks"
   (interactive)
   (let ((org-super-agenda-groups `((:discard (:tag "work"))
-                                   (:name "Today"
-                                          :scheduled today)
+                                   (:discard (:todo "[X]"))
                                    (:name "Due today"
+                                          :scheduled today
                                           :scheduled past
                                           :deadline today)
                                    (:name "Important"
