@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: frozen string literal
+# uuid:
+# key: fsl
+# condition: t
+# --
+
+# frozen_string_literal: true

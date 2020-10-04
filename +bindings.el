@@ -1,5 +1,5 @@
 (when (eq system-type 'darwin)
-  (mac-auto-operator-composition-mode +1)
+  ;; (mac-auto-operator-composition-mode +1)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'none))
 

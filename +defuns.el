@@ -60,3 +60,12 @@ If prefix ARG is non-nil, cd into `default-directory' instead of project root."
   (if (neo-global--window-exists-p)
       (neotree-hide)
     (+neotree/find-this-file)))
+
+(defun count-words (start end)
+    "Print number of words in the region."
+    (interactive "r")
+    (save-excursion
+      (save-restriction
+        (narrow-to-region start end)
+        (goto-char (point-min))
+        (count-matches "\\sw+"))))

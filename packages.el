@@ -48,3 +48,5 @@
 (package! alchemist :disable t)
 (package! nose :disable t)
 (package! exunit)
+(package! tern :disable t)
+(package! tide :disable t)

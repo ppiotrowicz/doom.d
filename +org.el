@@ -27,7 +27,7 @@
 (setq org-log-redeadline 'time)
 (setq org-log-reschedule 'time)
 (setq org-ellipsis " ▾ ")
-(setq org-bullets-bullet-list '("☰"))
+(setq org-superstar-headline-bullets-list '("☰"))
 (setq org-log-into-drawer t)
 (setq org-agenda-skip-deadline-prewarning-if-scheduled t)
 (setq org-agenda-skip-scheduled-if-deadline-is-shown t)

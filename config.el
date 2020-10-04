@@ -10,8 +10,11 @@
 
 (setq auth-sources '("~/.authinfo.gpg"))
 
-(setq doom-font (font-spec :family "iosevka" :size 14)
-      doom-variable-pitch-font (font-spec :family "iosevka"))
+;; (setq doom-font (font-spec :family "iosevka" :size 15)
+;;       doom-variable-pitch-font (font-spec :family "iosevka"))
+
+(setq doom-font (font-spec :family "JetBrains Mono" :size 13)
+      doom-variable-pitch-font (font-spec :family "JetBrains Mono"))
 
 (setq doom-scratch-buffer-major-mode 'emacs-lisp-mode)
 

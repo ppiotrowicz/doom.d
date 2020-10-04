@@ -10,3 +10,13 @@
   (kill-buffer "*rspec-compilation*"))
 
 (setq rspec-use-spring-when-possible t)
+
+(setq flycheck-command-wrapper-function
+      (lambda (command)
+        (if (string-suffix-p "rubocop" (car command))
+            (append '("bundle" "exec") command)
+          command)))
+
+(after! flycheck
+  (setq-default flycheck-disabled-checkers '(ruby-reek))
+)
