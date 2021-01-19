@@ -21,7 +21,7 @@
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        hl-todo
        hydra
-       (modeline +light) ; snazzy, Atom-inspired modeline, plus API
+       modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
        neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
