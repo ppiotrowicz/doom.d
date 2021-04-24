@@ -18,6 +18,18 @@
 
 (setq doom-scratch-buffer-major-mode 'emacs-lisp-mode)
 
+
+;; Global settings (defaults)
+(setq doom-themes-enable-bold t
+      doom-themes-enable-italic t
+      doom-themes-neotree-file-icons t)
+
+(doom-themes-visual-bell-config)
+(doom-themes-neotree-config)
+
+(setq doom-one-brighter-comments t
+      doom-one-brighter-modeline t)
+
 (setq doom-theme 'doom-one)
 
 (setq org-directory "~/org/")
