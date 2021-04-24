@@ -22,7 +22,7 @@
 
 (setq org-directory "~/org/")
 
-(setq display-line-numbers-type nil)
+(setq display-line-numbers-type t)
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
 (setq projectile-project-search-path '("~/code"))
