@@ -16,8 +16,8 @@
                                            (file+headline +org-capture-notes-file "INBOX")
                                            "* %u %?\n%i\n%a" :prepend t)
                                           ("p" "Project-local todo" entry
-                                           (file+headline +org-capture-project-todo-file "Inbox")
-                                           "* [ ]  %?\n%i\n%a" :prepend t))))
+                                           (file+headline +org-capture-project-todo-file "todos")
+                                           "* [ ] %?\n%i\n%a" :prepend t))))
 
 
 (after! org (setq org-todo-keywords '((sequence "[ ](t)" "[-](s)" "[?](w)" "|" "[X](d)")
