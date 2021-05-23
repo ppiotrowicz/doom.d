@@ -10,14 +10,10 @@
 
 (setq auth-sources '("~/.authinfo.gpg"))
 
-(setq doom-font (font-spec :family "Cascadia Code PL" :size 14)
-      doom-variable-pitch-font (font-spec :family "Cascadia Code PL"))
-
-;; (setq doom-font (font-spec :family "JetBrains Mono" :size 14)
-;;       doom-variable-pitch-font (font-spec :family "JetBrains Mono"))
+(setq doom-font (font-spec :family "M+ 2m" :size 14)
+      doom-variable-pitch-font (font-spec :family "M+ 2m"))
 
 (setq doom-scratch-buffer-major-mode 'emacs-lisp-mode)
-
 
 ;; Global settings (defaults)
 (setq doom-themes-enable-bold t
@@ -27,10 +23,10 @@
 (doom-themes-visual-bell-config)
 (doom-themes-neotree-config)
 
-(setq doom-one-brighter-comments t
-      doom-one-brighter-modeline t)
+(setq doom-nord-brighter-modeline t
+      doom-nord-region-highlight 'frost)
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-nord)
 
 (setq org-directory "~/org/")
 
